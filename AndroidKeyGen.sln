@@ -1,0 +1,22 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34728.123
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidKeyGen", "AndroidKeyGen.csproj", "{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Default|Any CPU = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Default|Any CPU.ActiveCfg = Default|Any CPU
+		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Default|Any CPU.Build.0 = Default|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F7CD1E12-8EA9-424D-8382-6F0667A58961}
+	EndGlobalSection
+EndGlobal
