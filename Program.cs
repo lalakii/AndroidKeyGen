@@ -14,6 +14,7 @@ using Org.BouncyCastle.Asn1.X9;
 using Org.BouncyCastle.Asn1.Nist;
 using System.Reflection;
 using System.Windows.Forms;
+using System.IO.Compression;
 
 namespace AndroidKeyGen
 {
@@ -23,14 +24,21 @@ namespace AndroidKeyGen
         private static void Main()
         {
             var main = Assembly.GetExecutingAssembly();
-            foreach (string resName in main.GetManifestResourceNames())
+            foreach (var resName in main.GetManifestResourceNames())
             {
-                Stream res = main.GetManifestResourceStream(resName);
-                if (resName.EndsWith(".dll"))
+                using (var res = main.GetManifestResourceStream(resName))
                 {
-                    var ms = new MemoryStream();
-                    res.CopyTo(ms);
-                    AppDomain.CurrentDomain.AssemblyResolve += (_, __) => Assembly.Load(ms.ToArray());
+                    if (resName.EndsWith(".gz"))
+                    {
+                        using (var gzDll = new GZipStream(res, CompressionMode.Decompress))
+                        {
+                            using (var ms = new MemoryStream())
+                            {
+                                gzDll.CopyTo(ms);
+                                AppDomain.CurrentDomain.AssemblyResolve += (_, __) => Assembly.Load(ms.ToArray());
+                            }
+                        }
+                    }
                 }
             }
             Application.EnableVisualStyles();

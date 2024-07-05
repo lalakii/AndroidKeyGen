@@ -184,7 +184,7 @@
             this.MaximizeBox = false;
             this.Name = "AndroidKeyGen";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "AndroidKeyGen v1.1";
+            this.Text = "AndroidKeyGen v1.2";
             this.SizeChanged += new System.EventHandler(this.AndroidKeyGen_SizeChanged);
             ((System.ComponentModel.ISupportInitialize)(this.git)).EndInit();
             this.ResumeLayout(false);
