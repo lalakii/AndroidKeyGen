@@ -8,6 +8,8 @@
 
 不需要像以前一样填写一大堆内容
 
+支持1位数的短密码
+
 ## 界面预览
 
 <img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.jpg" width="450"/>
