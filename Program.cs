@@ -43,7 +43,7 @@ namespace AndroidKeyGen
             }
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new AndroidKeyGen());
+            Application.Run(new AndroidKeyGenForm().GetForm());
         }
 
         public enum AlgorithmType
@@ -100,7 +100,7 @@ namespace AndroidKeyGen
                 {
                     alias += ".jks";
                 }
-                using (var fs = new FileStream(alias, FileMode.Create, FileAccess.Write))
+                using (var fs = new FileStream(Path.GetFileName(alias), FileMode.Create, FileAccess.Write))
                 {
                     store.Save(fs, pwd.ToCharArray(), rdm);
                 }

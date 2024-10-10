@@ -2,7 +2,7 @@
 
 [![Windows .exe program](https://img.shields.io/badge/windows-.exe-0078D4?logo=windows)](https://ru.wikipedia.org/wiki/.EXE)
 
-安卓签名证书生成器，更加方便的创建Android签名证书，使用.Net Framework 实现，不依赖 Java 环境
+安卓签名证书生成器，更加方便的创建 Android 签名证书，使用 .Net Framework 实现，不依赖 Java 环境
 
 支持修改证书算法：RSA、EC、DSA
 
@@ -10,12 +10,14 @@
 
 ## 界面预览
 
-<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.jpg" width="450"/>
+<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.png" width="450"/>
 
 ## 下载
 
 [本地下载](https://github.com/lalakii/AndroidKeyGen/releases)
 
-[备用下载 蓝奏云](https://a01.lanzout.com/b0hc4t17g) 密码：gm9l
+[备用下载 蓝奏云 1](https://a01.lanzout.com/ids3j2c82qhi)
+
+[备用下载 蓝奏云 2](https://a01.lanzoui.com/ids3j2c82qhi)
 
 ## By lalaki.cn
