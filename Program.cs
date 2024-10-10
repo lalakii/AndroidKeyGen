@@ -100,7 +100,13 @@ namespace AndroidKeyGen
                 {
                     alias += ".jks";
                 }
-                using (var fs = new FileStream(Path.GetFileName(alias), FileMode.Create, FileAccess.Write))
+                var savePath = Path.GetFileName(alias);
+                if (Directory.Exists(savePath))
+                {
+                    MessageBox.Show("名称冲突，请修改名称！");
+                    return 1;
+                }
+                using (var fs = new FileStream(savePath, FileMode.Create, FileAccess.Write))
                 {
                     store.Save(fs, pwd.ToCharArray(), rdm);
                 }

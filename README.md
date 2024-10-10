@@ -16,8 +16,8 @@
 
 [本地下载](https://github.com/lalakii/AndroidKeyGen/releases)
 
-[备用下载 蓝奏云 1](https://a01.lanzout.com/iUf2H2c82zkf)
+[备用下载 蓝奏云 1](https://a01.lanzoui.com/i4tg52c83p7i)
 
-[备用下载 蓝奏云 2](https://a01.lanzoui.com/iUf2H2c82zkf)
+[备用下载 蓝奏云 2](https://a01.lanzout.com/i4tg52c83p7i)
 
 ## By lalaki.cn
