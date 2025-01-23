@@ -10,14 +10,14 @@
 
 ## 预览
 
-<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.jpg" width="380"/>
+<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.jpeg" width="380"/>
 
 ## 下载
 
 [本地下载](https://github.com/lalakii/AndroidKeyGen/releases)
 
-[备用下载 蓝奏云 1](https://a01.lanzout.com/iFcVa2lrbkeb)
+[备用下载 蓝奏云 1](https://a01.lanzoui.com/iDyIu2lrfwve)
 
-[备用下载 蓝奏云 2](https://a01.lanzoui.com/iFcVa2lrbkeb)
+[备用下载 蓝奏云 2](https://a01.lanzout.com/iDyIu2lrfwve)
 
 ## By lalaki.cn

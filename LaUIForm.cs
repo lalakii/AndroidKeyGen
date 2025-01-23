@@ -13,6 +13,7 @@ namespace AndroidKeyGen
 
         public LaUIForm(ILaUI events)
         {
+            AutoScaleMode = AutoScaleMode.Dpi;
             BackColor = Color.GhostWhite;
             StartPosition = FormStartPosition.CenterScreen;
             Icon = Icon.ExtractAssociatedIcon(Assembly.GetExecutingAssembly().Location);

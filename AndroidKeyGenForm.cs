@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Bcpg;
+using System;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
@@ -26,6 +27,10 @@ namespace AndroidKeyGen
 
         private Label lb5;
 
+        private Label lb6;
+
+        private DateTimePicker picker;
+
         private TextBox tb1;
 
         private TextBox tb2;
@@ -38,6 +43,7 @@ namespace AndroidKeyGen
                 ColorPrimary = Color.FromArgb(255, 164, 197, 57),
                 BorderColor = Color.DarkGray,
                 BorderVisible = true,
+                ActiveControl = bt1,
             };
         }
 
@@ -70,7 +76,9 @@ namespace AndroidKeyGen
             lb3 = new() { Top = lb2.Top + lb2.Height + 10, Left = left, AutoSize = true, Text = "名称/Name：" };
             lb4 = new() { Top = lb3.Top + lb3.Height + 10, Left = left, AutoSize = true, Text = "密码/Password：" };
             lb5 = new() { Top = lb1.Top + lb1.Height + 10, AutoSize = true, Text = "年/Years" };
-            content.Controls.AddRange([lb1, lb2, lb3, lb4, lb5]);
+            lb6 = new() { Top = lb4.Top + lb4.Height + 10, Left = left, AutoSize = true, Text = "起始日期/Start date：" };
+            picker = new() { Format = DateTimePickerFormat.Custom, CustomFormat = System.Globalization.CultureInfo.CurrentCulture.DateTimeFormat.UniversalSortableDateTimePattern };
+            content.Controls.AddRange([picker, lb1, lb2, lb3, lb4, lb5, lb6]);
             cb1 = new()
             {
                 Left = lb1.Left + lb1.Width + 65,
@@ -91,9 +99,8 @@ namespace AndroidKeyGen
             cb1.SelectedIndex = 0;
             tb1 = new() { Left = cb1.Left, Width = cb1.Width };
             tb2 = new() { Left = cb1.Left, Width = cb1.Width, UseSystemPasswordChar = true };
-            bt1 = new() { Text = "生成/Generate", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Width = 167, Height = 42, Top = lb4.Top + lb4.Height + 20 };
+            bt1 = new() { Text = "生成/Generate", AutoSize = true, TextAlign = ContentAlignment.MiddleCenter, Width = 167, Height = 42 };
             content.Controls.AddRange([cb1, cb2, tb1, tb2, bt1]);
-            content.Height = bt1.Top + bt1.Height + 10;
         }
 
         public void OnLayout(Panel content)
@@ -103,7 +110,12 @@ namespace AndroidKeyGen
             tb1.Top = ((lb3.Height - tb1.Height) / 2) + lb3.Top;
             tb2.Top = ((lb3.Height - tb2.Height) / 2) + lb4.Top;
             lb5.Left = cb2.Left + cb2.Width;
+            picker.Top = ((lb6.Height - picker.Height) / 2) + lb6.Top;
+            picker.Left = tb1.Left;
+            picker.Width = tb1.Width + lb5.Width;
+            bt1.Top = picker.Top + picker.Height + 5;
             content.Width = lb5.Width + lb5.Left + 14;
+            content.Height = bt1.Top + bt1.Height + 10;
             bt1.Left = (content.Width - bt1.Width) / 2;
             bt1.Click += Bt1_Click;
         }
@@ -120,13 +132,13 @@ namespace AndroidKeyGen
                 return;
             }
 
-            var errCode = JksUtils.CreateKeyStore(getType, Math.Abs(getYear), getAlias.Replace("=", "-"), getPwd);
+            var errCode = JksUtils.CreateKeyStore(getType, Math.Abs(getYear), getAlias.Replace("=", "-"), getPwd, picker.Value);
             var msg = "创建失败！";
             var icon = MessageBoxIcon.Error;
             if (errCode == 0)
             {
                 icon = MessageBoxIcon.Information;
-                msg = string.Format("Android签名证书生成成功\r\n\r\n算法：{0}\r\n有效期：{1}年\r\n名称：{2}\r\n密码：{3}\r\n\r\n证书文件存储在程序运行路径: {4}", getType, getYear, getAlias, getPwd, Program.wd);
+                msg = string.Format("Android签名证书生成成功\r\n\r\n算法：{0}\r\n有效期：{1}年\r\n名称：{2}\r\n密码：{3}\r\n起始日期：{4}\r\n\n证书文件存储在程序运行路径: {5}", getType, getYear, getAlias, getPwd, picker.Value, Program.wd);
             }
 
             MessageBox.Show(msg, null, MessageBoxButtons.OK, icon);

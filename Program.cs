@@ -54,7 +54,7 @@ namespace AndroidKeyGen
 
         public static class JksUtils
         {
-            public static int CreateKeyStore(AlgorithmType type, int year, string alias, string pwd)
+            public static int CreateKeyStore(AlgorithmType type, int year, string alias, string pwd, DateTime date)
             {
                 string algorithm = null;
                 IAsymmetricCipherKeyPairGenerator generator = null;
@@ -92,7 +92,6 @@ namespace AndroidKeyGen
                 var pair = generator.GenerateKeyPair();
                 var x509 = new X509V3CertificateGenerator();
                 var name = new X509Name("c=" + alias);
-                var date = DateTime.Now;
                 x509.SetIssuerDN(name);
                 x509.SetSubjectDN(name);
                 x509.SetNotBefore(date);
