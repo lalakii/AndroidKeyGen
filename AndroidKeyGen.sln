@@ -7,11 +7,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AndroidKeyGen", "AndroidKey
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
-		Default|Any CPU = Default|Any CPU
+		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Default|Any CPU.ActiveCfg = Default|Any CPU
-		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Default|Any CPU.Build.0 = Default|Any CPU
+		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,23 +1,24 @@
-# AndroidKeyGen 安卓APK签名证书(.jks)生成器
+# AndroidKeyGen - Android APK Signature Certificate (.jks) Generator
 
-[![Android KeyGen V1.4](https://img.shields.io/badge/windows-.exe-0078D4?logo=windows)](https://ru.wikipedia.org/wiki/.EXE)
+[![Android KeyGen V1.5](https://img.shields.io/badge/windows-.exe-0078D4?logo=windows)](https://github.com/lalakii/AndroidKeyGen)
 
-安卓APK签名证书生成器，更加简单快速地生成 Android 签名证书，使用 .Net Framework 实现，不依赖 Java 环境
+[ [English](README.md) | [简体中文](README_zh.md) ]
 
-支持算法(都是with SHA256)：RSA、EC、DSA
+Android APK signature certificate generator, more simple and fast to generate Android signature certificate, using C# implementation, does not rely on the Java environment.
 
-不需要填写一大堆内容
++ Supported algorithms (with SHA256): RSA, EC, DSA
 
-## 预览
++ No need to fill out a bunch of fields
 
-<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/demo.jpeg" width="380"/>
+## Preview
 
-## 下载
+<img src="https://cdn.jsdelivr.net/gh/lalakii/AndroidKeyGen/Properties/demo_en.jpeg" width="350"/>
 
-[本地下载](https://github.com/lalakii/AndroidKeyGen/releases)
+## Download
 
-[备用下载 蓝奏云 1](https://a01.lanzoui.com/iDyIu2lrfwve)
+[Github](https://github.com/lalakii/AndroidKeyGen/releases)
 
-[备用下载 蓝奏云 2](https://a01.lanzout.com/iDyIu2lrfwve)
+[SourceForge](https://sourceforge.net/projects/androidkeygen/)
 
-## By lalaki.cn
+## License
+[MIT](https://github.com/lalakii/AndroidKeyGen/blob/master/LICENSE)

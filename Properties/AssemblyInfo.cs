@@ -2,6 +2,6 @@
 
 [assembly: AssemblyTitle("AndroidKeyGen")]
 [assembly: AssemblyProduct("AndroidKeyGen")]
-[assembly: AssemblyCopyright("Copyright © 2024 lalaki.cn")]
-[assembly: AssemblyVersion("1.4.0.0")]
-[assembly: AssemblyFileVersion("1.4.0.0")]
+[assembly: AssemblyCopyright("Copyright © 2025 lalaki.cn")]
+[assembly: AssemblyVersion("1.5.0.0")]
+[assembly: AssemblyFileVersion("1.5.0.0")]

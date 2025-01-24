@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <LangVersion>preview</LangVersion>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Configuration Condition=" '$(Configuration)' == '' ">Release</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{57EAA6B0-5C69-4AE0-8C88-89126AC0BC78}</ProjectGuid>
     <OutputType>WinExe</OutputType>
@@ -15,65 +15,52 @@
     <Deterministic>true</Deterministic>
     <TargetFrameworkProfile />
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Default|AnyCPU' ">
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
+    <DefineConstants>
+    </DefineConstants>
     <ErrorReport>none</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <WarningLevel>5</WarningLevel>
     <Prefer32Bit>false</Prefer32Bit>
     <NoWarn>S108;SA1200;SA1600;SA1633;SA1602;S2486;S1075;SA0001;SA1101;</NoWarn>
   </PropertyGroup>
-  <PropertyGroup />
   <PropertyGroup>
     <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup />
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>icon.ico</ApplicationIcon>
+    <ApplicationManifest>Properties\app.manifest</ApplicationManifest>
+    <ApplicationIcon>Properties\icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Cryptography, Version=2.0.0.0, Culture=neutral, PublicKeyToken=072edcf4a5328938, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>Properties\BouncyCastle.Cryptography.dll</HintPath>
+      <Private>False</Private>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.IO.Compression" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="Microsoft.CSharp" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="AndroidKeyGenForm.cs" />
-    <Compile Include="LaUIForm.cs" />
-    <Compile Include="Program.cs" />
+    <Compile Include="src\AndroidKeyGenForm.cs" />
+    <Compile Include="src\CertUtils.cs" />
+    <Compile Include="src\LaUIForm.cs" />
+    <Compile Include="src\Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include=".editorconfig" />
-    <None Include="app.manifest" />
+    <None Include="Properties\app.manifest" />
     <EmbeddedResource Include="Properties\res.gz" />
-  </ItemGroup>
-  <ItemGroup>
+    <EmbeddedResource Include="Properties\Android_symbol_green_RGB.png" />
+    <Content Include="Properties\icon.ico" />
+    <None Include="Properties\BouncyCastle.Cryptography.dll" />
     <PackageReference Include="StyleCop.Analyzers">
       <Version>1.2.0-beta.556</Version>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
       <PrivateAssets>all</PrivateAssets>
     </PackageReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="icon.ico" />
-    <Content Include="Properties\BouncyCastle.Cryptography.dll" />
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
-    <PostBuildEvent>cd "$(TargetDir)" &amp;&amp; del BouncyCastle.Cryptography.dll
-
-lalaki_sign "$(TargetPath)"</PostBuildEvent>
+    <PostBuildEvent>lalaki_sign "$(TargetPath)"</PostBuildEvent>
   </PropertyGroup>
 </Project>
